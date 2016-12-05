@@ -1,0 +1,49 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HousingFragment" >
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="17dp"
+        android:src="@android:drawable/ic_input_add" 
+        android:contentDescription="@string/add"
+        android:onClick="addHousePost"/>
+
+    <ImageButton
+        android:id="@+id/imageButton1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/searchDate"
+        android:src="@android:drawable/ic_menu_search" 
+        android:contentDescription="@string/search"/>
+
+    <EditText
+        android:id="@+id/searchDate"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/imageButton1"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="20dp"
+        android:ems="10"
+        android:inputType="text" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/searchDate"
+        android:layout_below="@+id/searchDate"
+        android:text="Advance Search" 
+        android:clickable="true"
+        android:onClick="advanceSearch"/>
+
+</RelativeLayout>

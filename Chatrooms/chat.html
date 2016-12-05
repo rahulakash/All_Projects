@@ -1,0 +1,125 @@
+<!DOCTYPE html> 
+<!--
+Rahul Akash Nethaji - 1000996022
+-->
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/chat.css">
+    <link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/chat.js"></script>
+</head>
+<body>
+<h1>ChatRooms</h2>
+<br><br>
+<div class='divLoginWidget row'>
+    <div class="divLogin col-md-6 widgetHeading">
+        Log In
+    </div>
+    <div class="divSignUp col-md-6 widgetHeading transparent">
+        Sign Up
+    </div>
+    <div class="divLoginForm">
+        <br><br>
+        <div class="inner-addon left-addon">
+            <i class="glyphicon glyphicon-user"></i>
+            <input id="txtUsername" type="text" class="form-control" placeholder="Username" />
+        </div>
+        <br>
+        <div class="inner-addon left-addon">
+            <i class="glyphicon glyphicon-lock"></i>
+            <input id="txtPassword" type="password" class="form-control" placeholder="Password" />    
+        </div><br>
+        <button id="btnLogin" class="btn btn-sm btn-warning">Login</button>
+    </div>
+    <div class="divSignUpForm">
+        <br><br>
+        <form id="formSignup">
+            <p class="widgetHeading fontWhite">Name</p>
+            <input id="txtName" type="text" class="form-control" placeholder="Name" /><br>
+            <p class="widgetHeading fontWhite">User Name</p>
+            <input id="txtSignUsername" type="text" class="form-control" placeholder="User Name" /><br>
+            <p class="widgetHeading fontWhite">Password</p>
+            <input id="txtSignPassword" type="text" class="form-control" placeholder="Password" /><br>
+            <p class="widgetHeading fontWhite">Email</p>
+            <input id="txtEmail" type="email" class="form-control" placeholder="Email" /><br>
+            <input id="btnSignUp" type="button" class="btn btn-sm btn-warning" value="Sign Up"/>
+        </form>
+    </div> 
+</div>
+<br>
+<div id="divErrorStatus" class="divLoginWidget">
+    <p class="fontRed"><i class="glyphicon glyphicon-remove"></i><span id="divErrorMsg"></span></p>
+</div>
+<div class="dropdown">
+    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownUser" data-toggle="dropdown">
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="#" data-toggle="modal" data-target="#modalCreateRoom">Create Room</a></li>
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="#" id="aLogout">Logout</a></li>
+      </ul>
+</div>
+<div class="divChatWindow row">
+    <section class="secChatRooms col-md-3">
+        <p class="widgetHeading divisionTitle" style="text-align:center">Chat Rooms</p>
+        <div class="divChatRooms"></div>
+    </section>
+    <section class="divChatBox col-md-6">
+        <p class="widgetHeading divisionTitle"></p>
+        <div class="divChatMsgs"> 
+        </div>
+        <div class="divBtnSend ">
+            <div class="col-md-8">
+                <input type="text" class="form-control" id="txtTypedMsg" placeholder="Enter your message here..."/>
+            </div>
+            <div class="col-md-4">
+                <button type="button" class="btn btn-sm btn-default" id="btnSendMessage">Send</button>
+                <button type="button" class="btn btn-sm btn-warning" id="btnLeave">Leave</button>
+            </div>
+        </div>
+    </section>
+    <section class="secOnlineUsers col-md-2">
+        <p class="divisionTitle">List of Online Users</p>
+    </section>
+</div>
+<div class="modal fade" id="modalLoading">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+          <img class="imgLoading" src="image/loading.gif">
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<div class="modal fade" id="modalAlert">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+          <p>Sign up successfull. Please login</p><br>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Okay</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<div class="modal fade" id="modalCreateRoom">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+          <p>Enter a Unique room name:</p>
+          <div class="divRoomName form-group has-feedback">
+              <input type="text" id="txtRoomName" class="form-control" placeholder="Room Name"/>
+              <div class="divRoomNameStatus"></div>
+          </div><br>
+          <button type="button" id="btnCreateRoom" class="btn btn-sm btn-warning" data-dismiss="modal" disabled>Create</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+</body>
+</html>

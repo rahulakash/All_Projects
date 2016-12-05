@@ -1,0 +1,72 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RidesFragment" >
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/imageButton1"
+        android:layout_toRightOf="@+id/imageButton1"
+        android:contentDescription="@string/add"
+        android:onClick="addRidesPost"
+        android:src="@android:drawable/ic_input_add" />
+
+     <RadioGroup
+         android:id="@+id/radioGroup1"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_alignBottom="@+id/textView1"
+         android:layout_centerHorizontal="true"
+         android:orientation="horizontal" >
+
+         <RadioButton
+             android:id="@+id/radioButton2"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:text="@string/request" />
+
+         <RadioButton
+             android:id="@+id/radioButton1"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:text="@string/post" />
+     </RadioGroup>
+
+     <TextView
+         android:id="@+id/textView1"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_alignLeft="@+id/searchDate"
+         android:layout_alignParentTop="true"
+         android:layout_marginTop="19dp"
+         android:text="@string/select"
+         android:textAppearance="?android:attr/textAppearanceMedium" />
+
+     <EditText
+         android:id="@+id/searchDate"
+         android:layout_width="170dp"
+         android:layout_height="wrap_content"
+         android:layout_alignBottom="@+id/imageButton1"
+         android:layout_alignParentLeft="true"
+         android:layout_marginLeft="18dp"
+         android:ems="10"
+         android:inputType="text" >
+
+         <requestFocus />
+     </EditText>
+
+     <ImageButton
+         android:id="@+id/imageButton1"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_below="@+id/radioGroup1"
+         android:layout_toRightOf="@+id/searchDate"
+         android:contentDescription="@string/search"
+         android:src="@android:drawable/ic_menu_search" />
+
+</RelativeLayout>

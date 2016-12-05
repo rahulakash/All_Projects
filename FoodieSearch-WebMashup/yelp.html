@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<!--//Author: RahulAkash
+//email: rahulakash.nethaji@mavs.uta.edu-->
+<html lang="en">
+  <head>      
+  <style>
+   #output{
+		float:right;
+	    margin-bottom: 10px;
+	    margin-top: 5px;
+	    width: 75%;
+	     max-height: 450px;
+      overflow-y:scroll;  
+	    margin-right: 40px;    
+	}
+   body {
+	 	margin:0;
+	 	background: #fbfbfb;
+   }
+   #displayInfo {
+	   background-color:white; font-family: Calibri;
+	   color: white; border:0; padding: 5px 5px;
+	   cursor: pointer;  
+       color: black;
+	   -moz-box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.49); 
+	   -webkit-box-shadow:0px 3px 3px 0px rgba(0, 0, 0, 0.49); 
+	   box-shadow: 0px 3px 3px 0px rgba(0, 0, 0,0.49);
+	}
+	#displayInfo:hover {
+	   background-color:#6FA8BC;
+	   color: gray;
+	}
+	#Gmap {
+	   height: 500px;
+	   width: 600px;
+	   float: left;
+	   margin-left: 10px;
+	}
+	a { 
+	   text-decoration:none;
+	   color: blue;
+	 }
+	label{ 
+        color:white;
+    }
+	.restaurant
+	{
+      background: #f2f2f2;
+      padding: 10px 10px;
+      margin-top: 20px;
+	}
+	#formid{
+		background-position: 365px 10px;
+	 	background-size: 120px 65px;
+	 	background-repeat: no-repeat;
+		background-color: #8A0707;
+		padding-bottom: 10px;
+		padding-top: 15px;
+	}
+  </style>
+    <title>Best Restaurants on the Map</title>
+    <meta charset="utf-8"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script type="text/javascript" src="yelp.js"></script>
+  </head>
+  <body style="font-family: Calibri !important;" 
+onload="loadScript();">
+    <form id='formid'>
+        <center>
+          <label style="font-size:35px; color:white; font-family:Papyrus;">Foodie Search</label><br/><br/>
+          <label style="color:white; font-family:Papyrus;">Search Terms: <input placeholder="Enter keyword..." type="text" id="form-input"></label>
+          <input type="button" id="find"   onclick="sendRequest();" value="Find"/></center>
+    </form><br/>
+    <div>
+      <div style="width:50%">
+         <div id="Gmap" style="border:6px outset gray"></div>
+       </div>
+    <div style="width:50%; float:left">
+        <div id="location">&nbsp;</div>
+    </div>
+    <div style="width:50%; float:left">
+        <div id="output">&nbsp;</div>
+    </div>
+    </div>
+  </body>
+</html>

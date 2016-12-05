@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="edu.uta.mavbuddy"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="19" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/Theme.Team6design" >
+        <activity
+            android:name="edu.uta.mavbuddy.HomeScreen"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="edu.uta.mavbuddy.UserHomePage"
+            android:label="@string/title_activity_user_home_page"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="edu.uta.mavbuddy.Register"
+            android:label="@string/title_activity_register"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="edu.uta.mavbuddy.RegisterSuccess"
+            android:label="@string/title_activity_register_success"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="edu.uta.mavbuddy.AddHousePost"
+            android:label="@string/title_activity_add_house_post"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="edu.uta.mavbuddy.Tab1"
+            android:label="@string/title_activity_tab1"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="edu.uta.mavbuddy.HousingTab"
+            android:label="@string/title_activity_housing_tab"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="edu.uta.mavbuddy.RidesTab"
+            android:label="@string/title_activity_rides_tab"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="edu.uta.mavbuddy.EventTab"
+            android:label="@string/title_activity_event_tab"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="edu.uta.mavbuddy.MyPostActivity"
+            android:label="@string/title_activity_my_post"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="edu.uta.mavbuddy.Activity_view_housing_post"
+            android:label="@string/title_activity_activity_view_housing_post"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="edu.uta.mavbuddy.View_housing_post"
+            android:label="@string/title_activity_view_housing_post"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="edu.uta.mavbuddy.View_ride_post"
+            android:label="@string/title_activity_view_ride_post"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="edu.uta.mavbuddy.View_event_post"
+            android:label="@string/title_activity_view_event_post"
+            android:screenOrientation="portrait" >
+        </activity>
+    </application>
+
+</manifest>

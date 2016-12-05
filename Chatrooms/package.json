@@ -1,0 +1,10 @@
+{
+    "name": "chat",
+    "private": "true",
+    "dependencies": {
+        "socket.io":"1",
+        "express": "3.2.6",
+        "mime": "*",
+        "mongoose": "3.8"
+    }
+}
